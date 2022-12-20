@@ -26,6 +26,11 @@ export const ContainerItens = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
   h1 {
     font-style: normal;
     font-weight: 500;
