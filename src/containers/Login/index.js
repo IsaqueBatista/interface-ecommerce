@@ -5,17 +5,9 @@ import * as Yup from 'yup'
 
 import LoginImg from '../../assets/login-image.svg'
 import Logo from '../../assets/logo.svg'
+import Button from '../../components/Button'
 import api from '../../services/api'
-import {
-  Container,
-  LoginImage,
-  ContainerItens,
-  P,
-  Input,
-  ErrorMessage,
-  Button,
-  SignInLink
-} from './styles'
+import { Container, LoginImage, ContainerItens, P, Input, ErrorMessage, SignInLink } from './styles'
 
 function Login() {
   const schema = Yup.object().shape({
@@ -56,7 +48,9 @@ function Login() {
           <Input type="password" {...register('password')} error={errors.password?.message} />
           <ErrorMessage>{errors.password?.message}</ErrorMessage>
 
-          <Button type="submit">Sign In</Button>
+          <Button type="submit" style={{ marginTop: 75, marginBottom: 25 }}>
+            Sign In
+          </Button>
         </form>
         <SignInLink>
           Não possui conta? <a href="/register">Sign Up</a>

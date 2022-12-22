@@ -73,31 +73,6 @@ export const ErrorMessage = styled.p`
   margin-top: 3px;
 `
 
-export const Button = styled.button`
-  width: 182.81px;
-  height: 36.13px;
-  border: none;
-  background: #9758a6;
-  border-radius: 20px;
-  cursor: pointer;
-
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
-  margin-top: 78px;
-  margin-bottom: 25px;
-  color: #eeeeee;
-
-  &:hover {
-    opacity: 0.8;
-  }
-  &:active {
-    opacity: 0.6;
-  }
-`
-
 export const SignInLink = styled.p`
   font-style: normal;
   font-weight: 300;
