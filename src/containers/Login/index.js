@@ -12,8 +12,7 @@ import api from '../../services/api'
 import { Container, LoginImage, ContainerItens, P, Input, ErrorMessage, SignInLink } from './styles'
 
 function Login() {
-  const users = useUser()
-  console.log(users)
+  const { putUserData, userData } = useUser()
 
   const schema = Yup.object().shape({
     email: Yup.string().email('Digite um e-mail válido').required('O e-mail é obrigatório'),
@@ -30,7 +29,7 @@ function Login() {
   })
 
   const onSubmit = async (clientData) => {
-    const response = await toast.promise(
+    const { data } = await toast.promise(
       api.post('sessions', {
         email: clientData.email,
         password: clientData.password
@@ -41,7 +40,8 @@ function Login() {
         error: 'Verifique seu e-mail e senha'
       }
     )
-    console.log(response)
+    putUserData(data)
+    console.log(userData)
   }
 
   return (
