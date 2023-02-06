@@ -12,7 +12,7 @@ import api from '../../services/api'
 import { Container, LoginImage, ContainerItens, P, Input, ErrorMessage, SignInLink } from './styles'
 
 function Login() {
-  const { putUserData, userData } = useUser()
+  const { putUserData } = useUser()
 
   const schema = Yup.object().shape({
     email: Yup.string().email('Digite um e-mail válido').required('O e-mail é obrigatório'),
@@ -41,7 +41,6 @@ function Login() {
       }
     )
     putUserData(data)
-    console.log(userData)
   }
 
   return (
