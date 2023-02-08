@@ -10,7 +10,7 @@ import Logo from '../../assets/logo.svg'
 import Button from '../../components/Button'
 import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
-import { Container, LoginImage, ContainerItens, P, Input, ErrorMessage, SignInLink } from './styles'
+import * as S from './styles'
 
 function Login() {
   const { putUserData } = useUser()
@@ -45,30 +45,30 @@ function Login() {
   }
 
   return (
-    <Container>
-      <LoginImage src={LoginImg} alt="login-image" />
-      <ContainerItens>
+    <S.Container>
+      <S.LoginImage src={LoginImg} alt="login-image" />
+      <S.ContainerItens>
         <img src={Logo} alt="logo-dev-burger" />
         <h1>Login</h1>
 
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <P>Email</P>
-          <Input type="email" {...register('email')} error={errors.email?.message} />
-          <ErrorMessage>{errors.email?.message}</ErrorMessage>
+          <S.P>Email</S.P>
+          <S.Input type="email" {...register('email')} error={errors.email?.message} />
+          <S.ErrorMessage>{errors.email?.message}</S.ErrorMessage>
 
-          <P>Senha</P>
-          <Input type="password" {...register('password')} error={errors.password?.message} />
-          <ErrorMessage>{errors.password?.message}</ErrorMessage>
+          <S.P>Senha</S.P>
+          <S.Input type="password" {...register('password')} error={errors.password?.message} />
+          <S.ErrorMessage>{errors.password?.message}</S.ErrorMessage>
 
           <Button type="submit" style={{ marginTop: 75, marginBottom: 25 }}>
             Sign In
           </Button>
         </form>
-        <SignInLink>
+        <S.SignInLink>
           Não possui conta? <Link to="/cadastro">Sign Up</Link>
-        </SignInLink>
-      </ContainerItens>
-    </Container>
+        </S.SignInLink>
+      </S.ContainerItens>
+    </S.Container>
   )
 }
 export default Login

@@ -9,15 +9,7 @@ import Logo from '../../assets/logo.svg'
 import RegisterImg from '../../assets/register-image.svg'
 import Button from '../../components/Button'
 import api from '../../services/api'
-import {
-  Container,
-  RegisterImage,
-  ContainerItens,
-  P,
-  Input,
-  ErrorMessage,
-  SignInLink
-} from './styles'
+import * as S from './styles'
 
 function Register() {
   const schema = Yup.object().shape({
@@ -63,43 +55,43 @@ function Register() {
   }
 
   return (
-    <Container>
-      <RegisterImage src={RegisterImg} alt="register-image" />
-      <ContainerItens>
+    <S.Container>
+      <S.RegisterImage src={RegisterImg} alt="register-image" />
+      <S.ContainerItens>
         <img src={Logo} alt="logo-dev-burger" />
         <h1>Register</h1>
 
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <P error={errors.name?.message}>Name</P>
-          <Input type="text" {...register('name')} error={errors.name?.message} />
-          <ErrorMessage>{errors.name?.message}</ErrorMessage>
+          <S.P error={errors.name?.message}>Name</S.P>
+          <S.Input type="text" {...register('name')} error={errors.name?.message} />
+          <S.ErrorMessage>{errors.name?.message}</S.ErrorMessage>
 
-          <P error={errors.email?.message}>Email</P>
-          <Input type="email" {...register('email')} error={errors.email?.message} />
-          <ErrorMessage>{errors.email?.message}</ErrorMessage>
+          <S.P error={errors.email?.message}>Email</S.P>
+          <S.Input type="email" {...register('email')} error={errors.email?.message} />
+          <S.ErrorMessage>{errors.email?.message}</S.ErrorMessage>
 
-          <P error={errors.password?.message}>Senha</P>
-          <Input type="password" {...register('password')} error={errors.password?.message} />
-          <ErrorMessage>{errors.password?.message}</ErrorMessage>
+          <S.P error={errors.password?.message}>Senha</S.P>
+          <S.Input type="password" {...register('password')} error={errors.password?.message} />
+          <S.ErrorMessage>{errors.password?.message}</S.ErrorMessage>
 
-          <P error={errors.confirmPassword?.message}>Confirmar Senha</P>
-          <Input
+          <S.P error={errors.confirmPassword?.message}>Confirmar Senha</S.P>
+          <S.Input
             type="password"
             {...register('confirmPassword')}
             error={errors.confirmPassword?.message}
           />
-          <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
+          <S.ErrorMessage>{errors.confirmPassword?.message}</S.ErrorMessage>
 
           <Button type="submit" style={{ marginTop: 25, marginBottom: 25 }}>
             Sign Up
           </Button>
         </form>
-        <SignInLink>
+        <S.SignInLink>
           Já possui conta?
           <Link to="/login">Sign In</Link>
-        </SignInLink>
-      </ContainerItens>
-    </Container>
+        </S.SignInLink>
+      </S.ContainerItens>
+    </S.Container>
   )
 }
 export default Register
