@@ -48,7 +48,8 @@ export const P = styled.p`
   font-size: 12px;
   line-height: 14px;
   color: #ffffff;
-  margin-top: 28px;
+  /* margin-top: 28px; */
+  margin-top: ${(props) => (props.error ? '12px' : '28px')};
   margin-bottom: 5px;
 `
 
