@@ -12,7 +12,7 @@ import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
 import * as S from './styles'
 
-function Login() {
+export default function Login() {
   const { putUserData } = useUser()
 
   const schema = Yup.object().shape({
@@ -71,4 +71,3 @@ function Login() {
     </S.Container>
   )
 }
-export default Login

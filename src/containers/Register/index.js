@@ -11,7 +11,7 @@ import Button from '../../components/Button'
 import api from '../../services/api'
 import * as S from './styles'
 
-function Register() {
+export default function Register() {
   const schema = Yup.object().shape({
     name: Yup.string().required('O nome é obrigatório'),
     email: Yup.string().email('Digite um e-mail válido').required('O e-mail é obrigatório'),
@@ -94,4 +94,3 @@ function Register() {
     </S.Container>
   )
 }
-export default Register
